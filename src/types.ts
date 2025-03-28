@@ -1,11 +1,8 @@
-export enum TaskStatus {
-  PENDING = 'PENDING',
-  COMPLETED = 'COMPLETED',
-}
+import { TaskStatus } from '@prisma/client';
 
 export type Task = {
   id: string;
   taskDescription: string;
   createdAt: Date;
-  status: TaskStatus;
+  taskStatus: TaskStatus;
 };

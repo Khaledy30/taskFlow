@@ -1,5 +1,5 @@
-import { PrismaClient } from '@prisma/client';
-import { Task, TaskStatus } from '../types';
+import { PrismaClient, TaskStatus } from '@prisma/client';
+import { Task } from '../types';
 
 const prisma = new PrismaClient();
 

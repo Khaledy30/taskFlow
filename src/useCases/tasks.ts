@@ -1,8 +1,9 @@
 import { createTaskRepository } from '../repositories/createTask.repository';
 import { findAllTasksRepository } from '../repositories/findAllTasks.repository';
-import { Task, TaskStatus } from '../types';
+import { Task } from '../types';
 import { getTaskByIdRepository } from '../repositories/getTaskById.repository';
 import { completeTaskRepository } from '../repositories/completeTask.repository';
+import { TaskStatus } from '@prisma/client';
 
 export const createTask = async (taskDescription: string): Promise<Task> => {
   const newTask: Task = await createTaskRepository({ taskDescription });
@@ -11,7 +12,7 @@ export const createTask = async (taskDescription: string): Promise<Task> => {
 };
 
 export const findAllTasks = async (): Promise<Task[]> => {
-  return await findAllTasksRepository();
+  return findAllTasksRepository();
 };
 
 export const getTaskById = async (id: string): Promise<Task | null> => {
@@ -27,7 +28,7 @@ export const completeTask = async (id: string): Promise<boolean> => {
     throw new Error('Tarefa não encontrada');
   }
 
-  if (task.status === TaskStatus.COMPLETED) {
+  if (task.taskStatus === TaskStatus.COMPLETED) {
     throw new Error('Tarefa já está completa');
   }
 
