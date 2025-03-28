@@ -17,6 +17,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@prisma/client": "^6.5.0",
     "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
@@ -25,6 +26,8 @@
     "eslint-plugin-prettier": "^5.2.5",
     "husky": "^8.0.0",
     "prettier": "^3.5.3",
+    "prettier-plugin-prisma": "^5.0.0",
+    "prisma": "^6.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
