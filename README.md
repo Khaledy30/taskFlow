@@ -30,7 +30,7 @@ A aplicação oferece endpoints para:
 
 ## Motivação
 
-Este projeto foi recriado do zero com o objetivo de aplicar conceitos modernos de desenvolvimento, incluindo:
+Este projeto foi criado do zero com o objetivo de aplicar conceitos modernos de desenvolvimento, incluindo:
 
 - Tipagem forte com TypeScript
 - ORM moderno com Prisma
