@@ -23,4 +23,5 @@ model Task {
   taskDescription String     @db.VarChar(255)
   taskStatus      TaskStatus @default(PENDING)
   createdAt       DateTime   @default(now())
+  completedAt     DateTime?
 }

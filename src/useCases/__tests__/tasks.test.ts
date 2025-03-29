@@ -1,5 +1,6 @@
+import { Task } from '../../types';
 import { createTask, getTaskById, completeTask } from '../tasks';
-import { Task, TaskStatus, PrismaClient } from '@prisma/client';
+import { TaskStatus, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -32,6 +33,7 @@ describe('Task Use Cases Integration Tests', () => {
     const completedTask = await getTaskById(createdTask.id);
 
     expect(completedTask?.taskStatus).toBe(TaskStatus.COMPLETED);
+    expect(completedTask?.completedAt).toBeDefined();
   });
 
   afterAll(async () => {
