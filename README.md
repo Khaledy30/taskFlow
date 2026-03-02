@@ -161,10 +161,15 @@ npm test -- --watch
 
 ```plaintext
 src/
-├── controllers/    # Controladores da aplicação
-├── repositories/   # Camada de acesso ao banco
-├── routes/         # Rotas da API
-├── types/          # Tipos e interfaces
-├── useCases/       # Regras de negócio
-└── server.ts       # Entrada da aplicação
+├── application/
+│   ├── repositories/   # Implementações de acesso a dados
+│   └── useCases/       # Casos de uso da aplicação
+├── domain/
+│   └── entities/       # Entidades do domínio
+├── infrastructure/
+│   └── database/       # Configurações de infraestrutura (ex: Prisma)
+├── interface/
+│   └── controllers/    # Controladores da API
+├── routes/             # Definição das rotas
+├── server.ts           # Entrada da aplicação
 ```
