@@ -1,11 +1,12 @@
-import { Task } from '../../types';
-import { createTask, getTaskById, completeTask } from '../tasks';
-import { TaskStatus, PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { TaskEntity } from '../../../domain/entities/task/task.entity';
+import { createTask } from '../task/createTaskUseCase';
+import { getTaskById } from '../task/getTaskByIdUseCase';
+import { completeTask } from '../task/completeTaskUseCase';
+import { TaskStatus } from '@prisma/client';
+import { prisma } from '../../../infrastructure/database/prisma';
 
 describe('Task Use Cases Integration Tests', () => {
-  let createdTask: Task;
+  let createdTask: TaskEntity;
   const taskDescription1 = 'Test task';
 
   it('should create a task', async () => {

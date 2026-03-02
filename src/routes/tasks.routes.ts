@@ -4,7 +4,7 @@ import {
   createTaskController,
   findAllTasksController,
   getTaskByIdController,
-} from '../controllers/tasks.controller';
+} from '../interface/controllers/tasks.controller';
 
 const taskRoutes = Router();
 

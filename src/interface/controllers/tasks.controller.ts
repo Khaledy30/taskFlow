@@ -1,10 +1,8 @@
 import { Request, Response } from 'express';
-import {
-  completeTask,
-  createTask,
-  findAllTasks,
-  getTaskById,
-} from '../useCases/tasks';
+import { createTask } from '../../application/useCases/task/createTaskUseCase';
+import { findAllTasks } from '../../application/useCases/task/findAllTasksUseCase';
+import { getTaskById } from '../../application/useCases/task/getTaskByIdUseCase';
+import { completeTask } from '../../application/useCases/task/completeTaskUseCase';
 
 export const createTaskController = async (req: Request, res: Response) => {
   const { taskDescription } = req.body;

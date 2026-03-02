@@ -1,12 +1,12 @@
-import { PrismaClient, Task, TaskStatus } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { TaskStatus } from '@prisma/client';
+import { TaskEntity } from '../../domain/entities/task/task.entity';
+import { prisma } from '../../infrastructure/database/prisma';
 
 export const completeTaskRepository = async ({
   id,
 }: {
   id: string;
-}): Promise<Task> => {
+}): Promise<TaskEntity> => {
   return prisma.task.update({
     where: {
       id,
