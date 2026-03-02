@@ -1,10 +1,8 @@
 import { Router, Request, Response } from 'express';
-import {
-  completeTaskController,
-  createTaskController,
-  findAllTasksController,
-  getTaskByIdController,
-} from '../interface/controllers/tasks.controller';
+import { createTaskController } from '../interface/controllers/task/createTask.controller';
+import { findAllTasksController } from '../interface/controllers/task/findAllTasks.controller';
+import { getTaskByIdController } from '../interface/controllers/task/getTaskById.controller';
+import { completeTaskController } from '../interface/controllers/task/completeTask.controller';
 
 const taskRoutes = Router();
 
