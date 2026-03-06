@@ -1,14 +1,14 @@
-import express from 'express';
-import cors from 'cors';
-import { taskRoutes } from './routes/tasks.routes';
+import express from 'express'
+import cors from 'cors'
+import { taskRoutes } from './routes/tasks.routes'
 
-const app = express();
-const port = process.env.PORT || 3000;
+const app = express()
+const port = process.env.PORT || 3000
 
-app.use(cors());
-app.use(express.json());
-app.use('/tasks', taskRoutes);
+app.use(cors())
+app.use(express.json())
+app.use('/tasks', taskRoutes)
 
 app.listen(port, () => {
-  console.log(`TaskFlow API running at http://localhost:${port}`);
-});
+  console.log(`TaskFlow API running at http://localhost:${port}`)
+})

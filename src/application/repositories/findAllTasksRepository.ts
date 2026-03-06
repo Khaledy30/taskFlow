@@ -1,6 +1,6 @@
-import { TaskEntity } from '../../domain/entities/task/task.entity';
-import { prisma } from '../../infrastructure/database/prisma';
+import { TaskEntity } from '../../domain/entities/task/task.entity'
+import { prisma } from '../../infrastructure/database/prisma'
 
 export const findAllTasksRepository = async (): Promise<TaskEntity[]> => {
-  return prisma.task.findMany();
-};
+  return prisma.task.findMany()
+}

@@ -1,11 +1,11 @@
-import { TaskStatus } from '@prisma/client';
-import { TaskEntity } from '../../domain/entities/task/task.entity';
-import { prisma } from '../../infrastructure/database/prisma';
+import { TaskStatus } from '@prisma/client'
+import { TaskEntity } from '../../domain/entities/task/task.entity'
+import { prisma } from '../../infrastructure/database/prisma'
 
 export const completeTaskRepository = async ({
   id,
 }: {
-  id: string;
+  id: string
 }): Promise<TaskEntity> => {
   return prisma.task.update({
     where: {
@@ -15,5 +15,5 @@ export const completeTaskRepository = async ({
       taskStatus: TaskStatus.COMPLETED,
       completedAt: new Date(),
     },
-  });
-};
+  })
+}
