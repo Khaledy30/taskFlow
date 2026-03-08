@@ -1,5 +1,6 @@
-import { UserEntity } from '../../../domain/entities/user/user.entity'
-import { createUserRepository } from '../../repositories/user/createUserRepository'
+import { UserEntity } from '@domain/entities/user/user.entity'
+import { createUserRepository } from '@application/repositories/user/createUserRepository'
+import { getUserByEmailRepository } from '@application/repositories/user/getUserByEmailRepository'
 
 export const createUserUseCase = async ({
   email,
@@ -8,6 +9,14 @@ export const createUserUseCase = async ({
   email: string
   password: string
 }): Promise<UserEntity> => {
+  const userExists = await getUserByEmailRepository({ email })
+
+  if (userExists) {
+    throw new Error('Os dados informados são inválidos.')
+  }
+
+  UserEntity.validate(email, password)
+
   const newUser: UserEntity = await createUserRepository({
     email,
     password,

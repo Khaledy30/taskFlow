@@ -1,5 +1,5 @@
-import { TaskEntity } from '../../../domain/entities/task/task.entity'
-import { getTaskByIdRepository } from '../../repositories/task/getTaskByIdRepository'
+import { TaskEntity } from '@domain/entities/task/task.entity'
+import { getTaskByIdRepository } from '@application/repositories/task/getTaskByIdRepository'
 
 export const getTaskById = async (id: string): Promise<TaskEntity | null> => {
   const task = await getTaskByIdRepository({ id })
