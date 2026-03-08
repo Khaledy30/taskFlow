@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { createTaskUseCase } from '../../../application/useCases/task/createTaskUseCase'
+import { createTaskUseCase } from '@application/useCases/task/createTaskUseCase'
 
 export const createTaskController = async (req: Request, res: Response) => {
   const { taskDescription } = req.body

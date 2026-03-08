@@ -7,7 +7,17 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@application/useCases/*": ["src/application/useCases/*"],
+      "@application/repositories/*": ["src/application/repositories/*"],
+      "@application/*": ["src/application/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@interface/*": ["src/interface/*"],
+      "@routes/*": ["src/routes/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

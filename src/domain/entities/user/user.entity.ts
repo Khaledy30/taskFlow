@@ -8,6 +8,10 @@ export class UserEntity {
     public createdAt: Date,
     public updatedAt: Date
   ) {
+    UserEntity.validate(email, password)
+  }
+
+  static validate(email: string, password: string) {
     if (!isValidEmail(email)) {
       throw new Error('Email inválido')
     }

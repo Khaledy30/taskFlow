@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { getTaskById } from '../../../application/useCases/task/getTaskByIdUseCase'
+import { getTaskById } from '@application/useCases/task/getTaskByIdUseCase'
 
 export const getTaskByIdController = async (req: Request, res: Response) => {
   const { id } = req.params

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { completeTaskUseCase } from '../../../application/useCases/task/completeTaskUseCase'
+import { completeTaskUseCase } from '@application/useCases/task/completeTaskUseCase'
 
 export const completeTaskController = async (req: Request, res: Response) => {
   const { id } = req.params
