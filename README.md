@@ -155,7 +155,7 @@ Para executar os testes em modo watch (desenvolvimento):
 npm test -- --watch
 ```
 
-**Observação**: Os testes utilizam o mesmo banco de dados configurado no .env, mas criam e removem os dados de teste automaticamente.
+**Observação**: Os testes utilizam o mesmo banco de dados configurado no .env, mas criam e removem os dados de teste automaticamente
 
 ## Estrutura do Projeto
 
