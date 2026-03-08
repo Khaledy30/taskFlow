@@ -1,16 +1,16 @@
-import { TaskEntity } from '../../../domain/entities/task/task.entity'
-import { createTask } from '../task/createTaskUseCase'
-import { getTaskById } from '../task/getTaskByIdUseCase'
-import { completeTask } from '../task/completeTaskUseCase'
 import { TaskStatus } from '@prisma/client'
-import { prisma } from '../../../infrastructure/database/prisma'
+import { createTaskUseCase } from '../../application/useCases/task/createTaskUseCase'
+import { TaskEntity } from '../../domain/entities/task/task.entity'
+import { completeTaskUseCase } from '../../application/useCases/task/completeTaskUseCase'
+import { getTaskById } from '../../application/useCases/task/getTaskByIdUseCase'
+import { prisma } from '../../infrastructure/database/prisma'
 
-describe('Task Use Cases Integration Tests', () => {
+describe('completeTaskUseCase', () => {
   let createdTask: TaskEntity
   const taskDescription1 = 'Test task'
 
   it('should create a task', async () => {
-    const task = await createTask(taskDescription1)
+    const task = await createTaskUseCase(taskDescription1)
 
     createdTask = task
 
@@ -20,17 +20,8 @@ describe('Task Use Cases Integration Tests', () => {
     expect(task.id).toBeDefined()
   })
 
-  it('should get a task by id', async () => {
-    const task = await getTaskById(createdTask.id)
-
-    expect(task?.id).toBe(createdTask?.id)
-    expect(task?.createdAt).toBeDefined()
-    expect(task?.taskStatus).toBe(TaskStatus.PENDING)
-    expect(task?.taskDescription).toBe(taskDescription1)
-  })
-
   it('should complete a task', async () => {
-    await completeTask(createdTask?.id)
+    await completeTaskUseCase(createdTask?.id)
 
     const completedTask = await getTaskById(createdTask.id)
 

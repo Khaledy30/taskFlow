@@ -5,7 +5,8 @@ export class UserEntity {
     public id: string,
     public email: string,
     public password: string,
-    public createdAt: Date
+    public createdAt: Date,
+    public updatedAt: Date
   ) {
     if (!isValidEmail(email)) {
       throw new Error('Email inválido')

@@ -1,7 +1,7 @@
 import { TaskEntity } from '../../../domain/entities/task/task.entity'
-import { createTaskRepository } from '../../repositories/createTaskRepository'
+import { createTaskRepository } from '../../repositories/task/createTaskRepository'
 
-export const createTask = async (
+export const createTaskUseCase = async (
   taskDescription: string
 ): Promise<TaskEntity> => {
   const newTask: TaskEntity = await createTaskRepository({ taskDescription })

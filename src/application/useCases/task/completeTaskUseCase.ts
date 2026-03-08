@@ -1,8 +1,8 @@
 import { TaskStatus } from '@prisma/client'
-import { completeTaskRepository } from '../../repositories/completeTaskRepository'
-import { getTaskByIdRepository } from '../../repositories/getTaskByIdRepository'
+import { completeTaskRepository } from '../../repositories/task/completeTaskRepository'
+import { getTaskByIdRepository } from '../../repositories/task/getTaskByIdRepository'
 
-export const completeTask = async (id: string): Promise<boolean> => {
+export const completeTaskUseCase = async (id: string): Promise<boolean> => {
   const task = await getTaskByIdRepository({ id })
 
   if (!task) {

@@ -6,6 +6,7 @@ export class TaskEntity {
     public taskDescription: string,
     public taskStatus: TaskStatus,
     public createdAt: Date,
+    public updatedAt: Date,
     public completedAt: Date | null
   ) {}
 }

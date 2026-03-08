@@ -1,6 +1,6 @@
 import { TaskStatus } from '@prisma/client'
-import { TaskEntity } from '../../domain/entities/task/task.entity'
-import { prisma } from '../../infrastructure/database/prisma'
+import { TaskEntity } from '../../../domain/entities/task/task.entity'
+import { prisma } from '../../../infrastructure/database/prisma'
 
 export const completeTaskRepository = async ({
   id,
