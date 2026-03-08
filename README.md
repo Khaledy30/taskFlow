@@ -166,6 +166,7 @@ src/
 │   └── useCases/       # Casos de uso da aplicação
 ├── domain/
 │   └── entities/       # Entidades do domínio
+├── e2e/                # Testes de integração
 ├── infrastructure/
 │   └── database/       # Configurações de infraestrutura (ex: Prisma)
 ├── interface/

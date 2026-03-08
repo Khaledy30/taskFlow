@@ -1,6 +1,6 @@
-import { UserEntity } from '../../../domain/entities/user/user.entity'
-import { createUserRepository } from '../../repositories/user/createUserRepository'
-import { getUserByEmailRepository } from '../../repositories/user/getUserByEmailRepository'
+import { UserEntity } from '@domain/entities/user/user.entity'
+import { createUserRepository } from '@application/repositories/user/createUserRepository'
+import { getUserByEmailRepository } from '@application/repositories/user/getUserByEmailRepository'
 
 export const createUserUseCase = async ({
   email,

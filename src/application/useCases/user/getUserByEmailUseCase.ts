@@ -1,4 +1,4 @@
-import { getUserByEmailRepository } from '../../repositories/user/getUserByEmailRepository'
+import { getUserByEmailRepository } from '@application/repositories/user/getUserByEmailRepository'
 
 export const getUserByEmailUseCase = async (email: string) => {
   const user = await getUserByEmailRepository({ email })

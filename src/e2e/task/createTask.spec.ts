@@ -1,6 +1,6 @@
-import { createTaskUseCase } from '../../application/useCases/task/createTaskUseCase'
-import { TaskEntity } from '../../domain/entities/task/task.entity'
-import { prisma } from '../../infrastructure/database/prisma'
+import { createTaskUseCase } from '@application/useCases/task/createTaskUseCase'
+import { TaskEntity } from '@domain/entities/task/task.entity'
+import { prisma } from '@infrastructure/database/prisma'
 
 describe('createTaskUseCase', () => {
   let createdTask: TaskEntity

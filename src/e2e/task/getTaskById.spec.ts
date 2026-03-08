@@ -1,8 +1,8 @@
 import { TaskStatus } from '@prisma/client'
-import { createTaskUseCase } from '../../application/useCases/task/createTaskUseCase'
-import { TaskEntity } from '../../domain/entities/task/task.entity'
-import { getTaskById } from '../../application/useCases/task/getTaskByIdUseCase'
-import { prisma } from '../../infrastructure/database/prisma'
+import { createTaskUseCase } from '@application/useCases/task/createTaskUseCase'
+import { TaskEntity } from '@domain/entities/task/task.entity'
+import { getTaskById } from '@application/useCases/task/getTaskByIdUseCase'
+import { prisma } from '@infrastructure/database/prisma'
 
 describe('getTaskByIdUseCase', () => {
   let createdTask: TaskEntity

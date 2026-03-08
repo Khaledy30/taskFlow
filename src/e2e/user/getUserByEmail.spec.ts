@@ -1,6 +1,6 @@
-import { createUserUseCase } from '../../application/useCases/user/createUserUseCase'
-import { getUserByEmailUseCase } from '../../application/useCases/user/getUserByEmailUseCase'
-import { prisma } from '../../infrastructure/database/prisma'
+import { createUserUseCase } from '@application/useCases/user/createUserUseCase'
+import { getUserByEmailUseCase } from '@application/useCases/user/getUserByEmailUseCase'
+import { prisma } from '@infrastructure/database/prisma'
 
 describe('getUserByEmailUseCase', () => {
   const user = {

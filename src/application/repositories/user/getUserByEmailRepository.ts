@@ -1,5 +1,5 @@
-import { UserEntity } from '../../../domain/entities/user/user.entity'
-import { prisma } from '../../../infrastructure/database/prisma'
+import { UserEntity } from '@domain/entities/user/user.entity'
+import { prisma } from '@infrastructure/database/prisma'
 
 export const getUserByEmailRepository = async ({
   email,

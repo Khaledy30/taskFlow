@@ -1,5 +1,5 @@
-import { createUserUseCase } from '../../application/useCases/user/createUserUseCase'
-import { prisma } from '../../infrastructure/database/prisma'
+import { createUserUseCase } from '@application/useCases/user/createUserUseCase'
+import { prisma } from '@infrastructure/database/prisma'
 
 describe('createUserUseCase', () => {
   const validUser = {
