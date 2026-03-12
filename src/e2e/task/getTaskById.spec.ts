@@ -7,14 +7,18 @@ import { prisma } from '@infrastructure/database/prisma'
 describe('getTaskByIdUseCase', () => {
   let createdTask: TaskEntity
   const taskDescription1 = 'Test task'
+  const taskTitle1 = 'Test task'
 
   it('should create a task', async () => {
-    const task = await createTaskUseCase(taskDescription1)
+    const task = await createTaskUseCase({
+      taskDescription: taskDescription1,
+      taskTitle: taskTitle1,
+    })
 
     createdTask = task
 
-    expect(task.taskDescription).toBe(taskDescription1)
-    expect(task.taskStatus).toBe(TaskStatus.PENDING)
+    expect(task.description).toBe(taskDescription1)
+    expect(task.status).toBe(TaskStatus.TODO)
     expect(task.createdAt).toBeDefined()
     expect(task.id).toBeDefined()
   })
@@ -24,8 +28,9 @@ describe('getTaskByIdUseCase', () => {
 
     expect(task?.id).toBe(createdTask?.id)
     expect(task?.createdAt).toBeDefined()
-    expect(task?.taskStatus).toBe(TaskStatus.PENDING)
-    expect(task?.taskDescription).toBe(taskDescription1)
+    expect(task?.status).toBe(TaskStatus.TODO)
+    expect(task?.description).toBe(taskDescription1)
+    expect(task?.title).toBe(taskTitle1)
   })
 
   afterAll(async () => {

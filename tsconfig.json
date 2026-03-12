@@ -13,9 +13,10 @@
       "@application/useCases/*": ["src/application/useCases/*"],
       "@application/repositories/*": ["src/application/repositories/*"],
       "@application/*": ["src/application/*"],
-      "@domain/*": ["src/domain/*"],
-      "@infrastructure/*": ["src/infrastructure/*"],
-      "@interface/*": ["src/interface/*"],
+      "@domain/entities/*": ["src/domain/entities/*"],
+      "@domain/utils/*": ["src/domain/utils/*"],
+      "@infrastructure/database/*": ["src/infrastructure/database/*"],
+      "@interface/controllers/*": ["src/interface/controllers/*"],
       "@routes/*": ["src/routes/*"]
     }
   },

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
-import { completeTaskUseCase } from '@application/useCases/task/completeTaskUseCase'
+import { updateTaskStatusUseCase } from '@application/useCases/task/updateTaskStatusUseCase'
+import { TaskStatus } from '@prisma/client'
 
 export const completeTaskController = async (req: Request, res: Response) => {
   const { id } = req.params
@@ -8,7 +9,7 @@ export const completeTaskController = async (req: Request, res: Response) => {
     return res.status(400).json({ error: 'Task id is required' })
   }
 
-  await completeTaskUseCase(id)
+  await updateTaskStatusUseCase({ id, status: TaskStatus.COMPLETED })
 
   return res.status(200).json({ message: 'Task completed successfully' })
 }
