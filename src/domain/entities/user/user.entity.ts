@@ -1,4 +1,5 @@
-import { isValidEmail, isValidPassword } from '../../utils/validators'
+import { isValidEmail, isValidPassword } from '@domain/utils/validators'
+import { TaskEntity } from '@domain/entities/task/task.entity'
 
 export class UserEntity {
   constructor(
@@ -6,7 +7,9 @@ export class UserEntity {
     public email: string,
     public password: string,
     public createdAt: Date,
-    public updatedAt: Date
+    public updatedAt: Date,
+    public assignedTasks?: TaskEntity[],
+    public createdTasks?: TaskEntity[]
   ) {
     UserEntity.validate(email, password)
   }
